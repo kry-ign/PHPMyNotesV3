@@ -7,10 +7,21 @@ namespace App;
 require ("src/Utils/debug.php");
 require ("src/View.php");
 
-$action = $_GET['action'] ?? null;
+const DEFAULT_ACTION = 'list';
+$action = $_GET['action'] ?? DEFAULT_ACTION;
 
 $view = new View();
-$view->render($action);
+
+$viewParams = [];
+if ($action === 'create') {
+    $page = 'create';
+    $viewParams['resultCreate'] = "udało sie";
+} else {
+    $page = 'list';
+    $viewParams['resultList'] = "wyswietlamy notatki";
+}
+
+$view->render($page, $viewParams);
 
 
 
