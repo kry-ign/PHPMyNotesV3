@@ -12,10 +12,7 @@ $request = [
     'post' => $_POST
 ];
 
-$controller = new Controller($request);
-$controller->run();
-
-
+(new Controller($request))->run();
 
 
 
