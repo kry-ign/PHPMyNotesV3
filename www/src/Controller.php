@@ -61,7 +61,7 @@ class Controller
     {
         return $this->request['post'] ?? [];
     }
-    
+
     private function getRequestGet(): array
     {
         return $this->request['get'] ?? [];
